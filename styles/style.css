@@ -12,8 +12,8 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 800px;
   margin: auto;
+  padding: 133px 30px;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
@@ -92,11 +92,11 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
   display: flex;
-  /* justify-content: space-between; */
   align-items: start;
   gap: 36px;
 }
@@ -117,7 +117,7 @@ ol {
   width: fit-content;
 }
 
-.search-form__label input:focus {
+.search-form__label .search-form__checkbox:focus {
   outline: none;
 }
 
@@ -126,7 +126,7 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__label:has(input[type="checkbox"]:hover) {
+.search-form__label:has(.search-form__checkbox:hover) {
   text-decoration: underline 1px;
   text-underline-offset: 2px;
   cursor: pointer;
@@ -138,16 +138,20 @@ ol {
   border-top: #fff solid 1px;
   border-bottom: #fff solid 1px;
   padding-top: 3.5px;
-  color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  color: currentColor;
+  font-family: inherit;
   font-size: 18px;
   background-color: transparent;
-  cursor: pointer;
+  cursor: text;
   appearance: none;
 }
 
 .search-form__textfield:active {
-  border: #fff solid 1px;
+  outline: #fff solid 1px;
+}
+
+.search-form__checkbox {
+  appearance: none;
 }
 
 .search-form__checkbox-list {
@@ -174,15 +178,15 @@ ol {
   background-color: #fff;
 }
 
-input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   display: block;
 }
 
 .button {
   border: #fff solid 1px;
   padding: 7px 72.5px;
-  color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  color: currentColor;
+  font-family: inherit;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
@@ -208,7 +212,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .button:active,
-.content__video-card:active {
+.content__card-link:active {
   background-color: #545050;
 }
 
@@ -244,8 +248,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   position: relative;
   height: 298px;
   padding-bottom: 2px;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .content__list {
@@ -256,8 +259,13 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .content__card-link {
-  color: #fff;
+  display: block;
+  color: currentColor;
   text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .content__video-card {
