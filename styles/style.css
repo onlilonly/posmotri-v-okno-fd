@@ -280,12 +280,11 @@ ol {
 
 .content__video-card-title {
   display: block;
-  height: 37px;
-  padding-top: 2px;
+  margin-bottom: 3px;
   overflow: hidden;
   font-weight: 700;
   font-size: 30px;
-  line-height: 100%;
+  line-height: 110%;
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
